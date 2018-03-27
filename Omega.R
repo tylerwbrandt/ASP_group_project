@@ -5,21 +5,25 @@ View(gdata)
 
 omega <-function(dataset,sigma){
   omega_matrix <- matrix(data = 0, nrow=(nrow(dataset)),ncol=(nrow(dataset)))
-  for(i in 1:(nrow(data))){
-    for (j in 1:(nrow(data))){
-      if(data$first[i] == data$first[j]){
+  for(i in 1:(nrow(dataset))){
+    for (j in 1:(nrow(dataset))){
+      if(dataset$first[i] == dataset$first[j]){
         omega_matrix[i,j] <- omega_matrix[i,j] + sigma^2
       }
-      else if(data$first[i] == data$second[j]){
+      if(dataset$first[i] == dataset$second[j]){
         omega_matrix[i,j] <- omega_matrix[i,j] - sigma^2
       }
-      else if(data$second[i] == data$first[j]){
+      if(dataset$second[i] == dataset$first[j]){
         omega_matrix[i,j] <- omega_matrix[i,j] - sigma^2
       }
-      else if(data$second[i] == data$second[j]){
+      if(dataset$second[i] == dataset$second[j]){
         omega_matrix[i,j] <- omega_matrix[i,j] + sigma^2
       }
     }
   }
+  return (omega_matrix)
 }
+
+omega(gdata, 2)
+
 
