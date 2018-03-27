@@ -4,9 +4,9 @@ colnames(gdata) <- c("first", "second", "y")
 View(gdata)
 
 omega <-function(dataset,sigma){
-  omega_matrix <- matrix(data = NA, nrow=(length(dataset)),ncol=(length(dataset)))
-  for(i in 1:(length(glist))){
-    for (j in 1:(length(glist))){
+  omega_matrix <- matrix(data = NA, nrow=(nrow(dataset)),ncol=(nrow(dataset)))
+  for(i in 1:(nrow(data))){
+    for (j in 1:(nrow(data))){
       if(i[1]==j[1]&i[2]==j[2]){
         
       }
