@@ -4,27 +4,22 @@ colnames(gdata) <- c("first", "second", "y")
 View(gdata)
 
 omega <-function(dataset,sigma){
-  omega_matrix <- matrix(data = NA, nrow=(nrow(dataset)),ncol=(nrow(dataset)))
+  omega_matrix <- matrix(data = 0, nrow=(nrow(dataset)),ncol=(nrow(dataset)))
   for(i in 1:(nrow(data))){
     for (j in 1:(nrow(data))){
-      if(i[1]==j[1]&i[2]==j[2]){
+      if(data$first[i] == data$first[j]){
         
       }
-      else if(i[1]==j[2]&i[2]==j[1]){
+      else if(data$first[i] == data$second[j]){
         
       }
-      else if(i[1]==j[1]){
+      else if(data$second[i] == data$first[j]){
         
       }
-      else if(i[1]==j[2]){
-        
-      }
-      else if(i[2]==j[1]){
-        
-      }
-      else if(i[2]==j[2]){
+      else if(data$second[i] == data$second[j]){
         
       }
     }
   }
 }
+
