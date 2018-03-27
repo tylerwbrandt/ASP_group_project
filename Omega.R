@@ -8,16 +8,16 @@ omega <-function(dataset,sigma){
   for(i in 1:(nrow(data))){
     for (j in 1:(nrow(data))){
       if(data$first[i] == data$first[j]){
-        
+        omega_matrix[i,j] <- omega_matrix[i,j] + sigma^2
       }
       else if(data$first[i] == data$second[j]){
-        
+        omega_matrix[i,j] <- omega_matrix[i,j] - sigma^2
       }
       else if(data$second[i] == data$first[j]){
-        
+        omega_matrix[i,j] <- omega_matrix[i,j] - sigma^2
       }
       else if(data$second[i] == data$second[j]){
-        
+        omega_matrix[i,j] <- omega_matrix[i,j] + sigma^2
       }
     }
   }
