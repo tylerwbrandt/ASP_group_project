@@ -1,7 +1,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #Found log-likelihood
 #Returned numeric
+=======
+# Log-likelihood function 
+
+>>>>>>> f38b9dec88ce282fcaa1b83209bd47483845a334
 =======
 # Log-likelihood function 
 
@@ -23,7 +28,12 @@ logLike<-function(y,g){
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #Example
+=======
+
+# Sample data 
+>>>>>>> f38b9dec88ce282fcaa1b83209bd47483845a334
 =======
 
 # Sample data 
