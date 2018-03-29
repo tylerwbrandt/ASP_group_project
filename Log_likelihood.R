@@ -1,7 +1,25 @@
-logLikelihood<-function(g, y){
-  sum<-0
-  for(i in 1:length(g)){
-    sum=sum+log(pnorm(g*y))
+Lg<-function(y,g){
+  result<-c()
+  for (i in 1:length(y)){
+    x<-y[i]*g[i]
+    xi<-log(pnorm(x,0,1))
+    result<-c(result,xi)
   }
-  return(sum)
+  output<-sum(result)
+  return(output)
 }
+
+derivativeLg<-function(y,g){
+  denom<-Lg(y,g)
+  output<-c()
+  for (i in 1:length(y)){
+    num<-y[i]*dnorm(g[i])
+    output[i]<-num/denom
+  }
+  return(output)
+}
+
+y1<-c(1,1,-1,1,-1)
+g1<-c(2,3,4,5,6)
+Lg(y1,g1)
+derivativeLg(y1,g1)
