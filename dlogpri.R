@@ -1,6 +1,8 @@
 omega_test <- omega(gdata, 2)
 g_test <- sample(1:10, 11, replace = T)
 
+## Derivative of the log prior function
+
 dlogpri <- function(omega, g){
   if (det(omega) == 0){
     diag(omega) <- diag(omega) + .01

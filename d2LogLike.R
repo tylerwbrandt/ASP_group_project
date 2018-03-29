@@ -1,4 +1,5 @@
 #Found second derivative of log-likelihood
+#Returned diagional matrix with ith element along the diagonal
 d2LogLike<-function(y,g){
   derivativeLL<-dLogLike(y,g)
   output<-diag(x=0,length(y),length(y))
@@ -10,6 +11,7 @@ d2LogLike<-function(y,g){
   return(output)
 }
 
+#Example
 y1<-c(1,1,-1,1,-1)
 g1<-c(2,3,4,5,6)
 logLike(y1,g1)

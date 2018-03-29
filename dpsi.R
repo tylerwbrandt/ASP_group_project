@@ -1,3 +1,5 @@
+## Simply adds to functions that are already created (derivative of log prior, derivative of log likelihood)
+
 dpsi <- function(omega, g, y){
   a <- dlogpri(omega, g)
   b <- dLogLike(y,g)
