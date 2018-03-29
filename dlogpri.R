@@ -15,3 +15,4 @@ dlogpri(omega_test, g_test)
 diag(omega_test) <- diag(omega_test) + .01
 (-solve(omega_test)) %*% g_test
 
+

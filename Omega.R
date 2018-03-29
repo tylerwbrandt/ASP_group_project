@@ -3,6 +3,9 @@ gdata <- data.frame(c(1,1,1,2,2,2,3,3,4,4,4), c(2,3,4,1,3,4,1,4,1,2,3),
 colnames(gdata) <- c("first", "second", "y")
 View(gdata)
 
+## May have to change the input to this function regarding the dataset
+## It is possible that we have to work with the SQL dataset and change it into what we need first
+
 omega <-function(dataset,sigma){
   omega_matrix <- matrix(data = 0, nrow=(nrow(dataset)),ncol=(nrow(dataset)))
   for(i in 1:(nrow(dataset))){
