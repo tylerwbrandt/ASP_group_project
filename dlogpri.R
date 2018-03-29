@@ -1,19 +1,17 @@
 omega_test <- omega(gdata, 2)
-omega_test <- diag(8,11,11)
-omega_test[2,1] <- omega_test[1,2] <- -4
+g_test <- sample(1:10, 11, replace = T)
 
 dlogpri <- function(omega, g){
   if (det(omega) == 0){
-    diag(omega) <- diag(omega) + .001
+    diag(omega) <- diag(omega) + .01
   }
   inv_omega <- solve(omega)
   neg_inv_omega <- -inv_omega
   return (neg_inv_omega %*% g)
 }
 
+dlogpri(omega_test, g_test)
 
-solve(omega_test)
-omega_test
 diag(omega_test) <- diag(omega_test) + .01
+(-solve(omega_test)) %*% g_test
 
-det(omega_test)
