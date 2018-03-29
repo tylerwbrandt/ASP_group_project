@@ -8,6 +8,8 @@ View(gdata)
 
 omega <-function(dataset,sigma){
   omega_matrix <- matrix(data = 0, nrow=(nrow(dataset)),ncol=(nrow(dataset)))
+  ## Iterate through matrix by row and column. Find entries comparisons that contain common doc
+  ## Add sigma^2 or negative sigma^2 to those entries
   for(i in 1:(nrow(dataset))){
     for (j in 1:(nrow(dataset))){
       if(dataset$first[i] == dataset$first[j]){
