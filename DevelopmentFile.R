@@ -45,6 +45,8 @@ g1<-c(2,3,4,5,6)
 y1<-c(1,1,-1,1,-1)
 logLike(g1,y1)
 
+# dLogLike Function (Equation 6)
+dLogLike(g1,y1)
 
 
 
