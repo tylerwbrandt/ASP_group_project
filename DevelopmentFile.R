@@ -48,6 +48,8 @@ logLike(g1,y1)
 # dLogLike Function (Equation 6)
 dLogLike(g1,y1)
 
+# d2LogLike Function (Equation 7)
+d2LogLike(g1,y1)
 
 
 
