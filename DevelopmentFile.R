@@ -40,7 +40,7 @@ diag(omega_test) <- diag(omega_test) + .01
 (-solve(omega_test)) %*% g_test
 
 # d2LogPri Function (Equation 5)
-
+d2LogPri(omega_test, g_test)
 
 
 
