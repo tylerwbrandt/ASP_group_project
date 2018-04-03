@@ -7,8 +7,10 @@ library(roxygen2)
 library(testthat)
 
 ## Set working directory
-setwd("~/Documents/GitHub/ASP_group_project")
-setwd("~/Documents/Applied_Statistical_Programming/ASP_group_project")
+setwd("~/Documents/GitHub/ASP_group_project") # Gangyi
+setwd("~/Documents/Applied_Statistical_Programming/ASP_group_project") # Tyler
+setwd("/Users/rohangupta/Documents/WUSTL/SP2018/Pol Sci/ASP_group_project") # Rohan
+
 
 ## Creates package skeleton
 # Only run this the first time to create the skeleton 
