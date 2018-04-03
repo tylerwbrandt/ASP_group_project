@@ -2,7 +2,7 @@
 
 export(d2LogLike)
 export(d2LogPri)
-export(d2psi)
+export(d2Psi)
 export(dLogLike)
 export(dLogPri)
 export(dPsi)

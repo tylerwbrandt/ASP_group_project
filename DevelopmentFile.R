@@ -59,6 +59,6 @@ dLogPri(omega_test, g_test) + dLogLike(g_test, y_test)
 dPsi(omega_test, g_test, y_test) == dLogPri(omega_test, g_test) + dLogLike(g_test, y_test)
 
 # d2Psi Function (Equation 9)
-
+d2Psi(omega_test, g_test, y_test)
 
 
