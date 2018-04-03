@@ -6,7 +6,7 @@
 #' @param g An unknown vector of real numbers 
 #'
 #' @return A matrix that is the second derivative of the log prior function 
-#' @author Gangyi Sun <\email{gangyi.sun@@wustl.edu}
+#' @author Group <\email{group@@wustl.edu}
 #' 
 #' @rdname d2LogPri
 #' @export

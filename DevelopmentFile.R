@@ -33,16 +33,17 @@ omega(gdata, 2)
 # dLogPri Function (Equation 4)
 omega_test <- omega(gdata, 2)
 g_test <- sample(1:10, 11, replace = T)
-
 dLogPri(omega_test, g_test)
-
 diag(omega_test) <- diag(omega_test) + .01
 (-solve(omega_test)) %*% g_test
 
 # d2LogPri Function (Equation 5)
 d2LogPri(omega_test, g_test)
 
-
+# logLike Function (Equation 5.9)
+g1<-c(2,3,4,5,6)
+y1<-c(1,1,-1,1,-1)
+logLike(g1,y1)
 
 
 

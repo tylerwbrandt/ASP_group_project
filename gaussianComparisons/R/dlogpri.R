@@ -6,7 +6,7 @@
 #' @param g An unknown vector of real numbers 
 #'
 #' @return A vector that is the derivative of the log prior function 
-#' @author Gangyi Sun <\email{gangyi.sun@@wustl.edu}
+#' @author Group <\email{group@@wustl.edu}
 #' 
 #' @rdname dLogPri
 #' @export

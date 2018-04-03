@@ -6,7 +6,7 @@
 #' @param sigma A numeric value of sigma, which is a hyper-prior chosen to identify the latent space. 
 #'
 #' @return A matrix which contains information about how a document is compared with all other documents. 
-#' @author Gangyi Sun <\email{gangyi.sun@@wustl.edu}
+#' @author Group <\email{group@@wustl.edu}
 #' 
 #' @rdname Omega
 #' @export

@@ -1,21 +1,17 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-#Found log-likelihood
-#Returned numeric
-=======
-# Log-likelihood function 
-
->>>>>>> f38b9dec88ce282fcaa1b83209bd47483845a334
-=======
-# Log-likelihood function 
-
->>>>>>> f38b9dec88ce282fcaa1b83209bd47483845a334
-=======
-# Log-likelihood function 
-
->>>>>>> f38b9dec88ce282fcaa1b83209bd47483845a334
-logLike<-function(y,g){
+#' Log-likelihood function (Equation 5.9)
+#'
+#' Returns the log-likelihood given a set of observed preferences y and the difference function g
+#'
+#' @param g An unknown vector of real numbers 
+#' @param y A vector of outcomes of pairwise comparison of documents 
+#'
+#' @return A vector containing the log-likelihood of each comparison 
+#' @author Group <\email{group@@wustl.edu}
+#' 
+#' @rdname logLike
+#' @export
+#' 
+logLike<-function(g,y){
   result<-c()
   for (i in 1:length(y)){   # obtains CDF of each y[i]*g[i]
     x<-y[i]*g[i]
@@ -25,23 +21,3 @@ logLike<-function(y,g){
   output<-sum(result)       # sum of all CDF
   return(output)            # returns sum of all CDF 
 }
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-#Example
-=======
-
-# Sample data 
->>>>>>> f38b9dec88ce282fcaa1b83209bd47483845a334
-=======
-
-# Sample data 
->>>>>>> f38b9dec88ce282fcaa1b83209bd47483845a334
-=======
-
-# Sample data 
->>>>>>> f38b9dec88ce282fcaa1b83209bd47483845a334
-y1<-c(1,1,-1,1,-1)
-g1<-c(2,3,4,5,6)
-logLike(y1,g1)
