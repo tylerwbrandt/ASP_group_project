@@ -8,6 +8,7 @@ library(testthat)
 
 ## Set working directory
 setwd("~/Documents/GitHub/ASP_group_project")
+setwd("/Users/rohangupta/Documents/WUSTL/SP2018/Pol Sci/ASP_group_project")
 
 ## Creates package skeleton
 # Only run this the first time to create the skeleton 
