@@ -1,5 +1,17 @@
-cleaner<- function(dataset){
+#' cleaner 
+#'
+#' cleans data 
+#'
+#' @param dataset input dataset 
+#'
+#' @return output dataset 
+#' @author Group <\email{group@@wustl.edu}
+#' 
+#' @rdname cleaner
+#' @export
+#' 
 
+cleaner<- function(dataset){
   newset1<-dataset[c(seq(1,nrow(dataset),2)),]
   newset2<-dataset[c(seq(2,nrow(dataset),2)),]
   colnames(newset1)<-c("comparison_id","first","y")
