@@ -1,10 +1,24 @@
 Package: gaussianComparisons
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.4.3)
+Title: gaussianComparisons Package
+Version: 0.1
+Author: Group 
+Maintainer: Group <group@wustl.edu>
+Description: A package for determining optimal pairings for pair-wise comparisons. 
+Depends: R (>= 3.0.0)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Suggests:
+  devtools
+Collate: 
+  'omega.R'
+  'dLogPri.R'
+  'd2LogPri.R'
+  'logLike.R'
+  'dLogLike.R'
+  'd2LogLike.R'
+  'dPsi.R'
+  'd2Psi.R'
+  'newtonMethodPrequel.R'
+  'newtonMethod.R'
 RoxygenNote: 6.0.1
