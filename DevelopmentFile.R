@@ -27,7 +27,7 @@ check(current.code)
 gdata <- data.frame(c(1,1,1,2,2,2,3,3,4,4,4), c(2,3,4,1,3,4,1,4,1,2,3),
                     c(1,1,1,-1,-1,-1,-1,1,-1,1,-1))
 colnames(gdata) <- c("first", "second", "y")
-View(gdata)
+#View(gdata)
 omega(gdata, 2)
 
 # dLogPri Function (Equation 4)
