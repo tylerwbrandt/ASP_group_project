@@ -61,4 +61,6 @@ dPsi(omega_test, g_test, y_test) == dLogPri(omega_test, g_test) + dLogLike(g_tes
 # d2Psi Function (Equation 9)
 d2Psi(omega_test, g_test, y_test)
 
+# newtonMethodPrequel Function (pre Equation 9.5)
+newtonMethodPrequel(omega_test, g_test, y_test)
 
