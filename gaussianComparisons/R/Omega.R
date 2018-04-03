@@ -1,11 +1,18 @@
-gdata <- data.frame(c(1,1,1,2,2,2,3,3,4,4,4), c(2,3,4,1,3,4,1,4,1,2,3),
-                    c(1,1,1,-1,-1,-1,-1,1,-1,1,-1))
-colnames(gdata) <- c("first", "second", "y")
-View(gdata)
+#' Calculating the omega matrix (Equation 1.5)
+#'
+#' Returns the omega matrix given an input of pair-wise comparisons and a sigma value 
+#'
+#' @param dataset A dataframe of comparisons, with each document being identified by an unique id. 
+#' @param sigma A numeric value of sigma, which is a hyper-prior chosen to identify the latent space. 
+#'
+#' @return A matrix which contains information about how a document is compared with all other documents. 
+#' @author Gangyi Sun <\email{gangyi.sun@@wustl.edu}
+#' 
+#' @rdname Omega
+#' @export
 
 ## May have to change the input to this function regarding the dataset
 ## It is possible that we have to work with the SQL dataset and change it into what we need first
-
 omega <-function(dataset,sigma){
   omega_matrix <- matrix(data = 0, nrow=(nrow(dataset)),ncol=(nrow(dataset)))
   ## Iterate through matrix by row and column. Find entries comparisons that contain common doc
@@ -28,7 +35,5 @@ omega <-function(dataset,sigma){
   }
   return (omega_matrix)
 }
-
-omega(gdata, 2)
 
 
