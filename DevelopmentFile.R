@@ -11,4 +11,4 @@ setwd("~/Documents/GitHub/ASP_group_project")
 
 ## Creates package skeleton
 # Only run this the first time to create the skeleton 
-devtools::create("gaussianComparisons")
+# Testdevtools::create("gaussianComparisons")
