@@ -64,3 +64,5 @@ d2Psi(omega_test, g_test, y_test)
 # newtonMethodPrequel Function (pre Equation 9.5)
 newtonMethodPrequel(omega_test, g_test, y_test)
 
+# newtonMethod Function (Equation 9.5)
+newton_method(omega_test, g_test, y_test, .01)
