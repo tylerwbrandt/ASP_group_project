@@ -23,9 +23,27 @@ check(current.code)
 
 ## Sample code to test that functions work 
 
-# omega Function 
+# omega Function (Equation 1.5)
 gdata <- data.frame(c(1,1,1,2,2,2,3,3,4,4,4), c(2,3,4,1,3,4,1,4,1,2,3),
                     c(1,1,1,-1,-1,-1,-1,1,-1,1,-1))
 colnames(gdata) <- c("first", "second", "y")
 View(gdata)
 omega(gdata, 2)
+
+# dLogPri Function (Equation 4)
+omega_test <- omega(gdata, 2)
+g_test <- sample(1:10, 11, replace = T)
+
+dLogPri(omega_test, g_test)
+
+diag(omega_test) <- diag(omega_test) + .01
+(-solve(omega_test)) %*% g_test
+
+
+
+
+
+
+
+
+
