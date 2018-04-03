@@ -13,7 +13,6 @@
 #' @rdname newtonMethod
 #' @export
 #' 
-
 newtonMethod <- function(omega, g, y, tolerance){
   g_1 <- g
   g_2 <- g_1 - newtonMethodPrequel(omega, g, y)

@@ -16,4 +16,3 @@ d2Psi<- function(omega,g, y){
     output<-(d2LogLike(g,y)+d2LogPri(omega,g))
     return(output)
 }
-
