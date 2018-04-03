@@ -1,16 +1,22 @@
-## Simply adds to functions that are already created (derivative of log prior, derivative of log likelihood)
-
-dpsi <- function(omega, g, y){
-  a <- dlogpri(omega, g)
-  b <- dLogLike(y,g)
+#' Derivative of the log of the numerator of the full posterior function (Equation 8)
+#'
+#' Adds to functions that are already created (derivative of log prior, derivative of log likelihood)
+#'
+#' @param omega A matrix which contains information about how a document is compared with all other documents.
+#' @param g An unknown vector of real numbers 
+#' @param y A vector of outcomes of pairwise comparison of documents 
+#'
+#' @return A vector representing the derivative of psi 
+#' @author Group <\email{group@@wustl.edu}
+#' 
+#' @rdname dPsi
+#' @export
+#' 
+dPsi <- function(omega, g, y){
+  a <- dLogPri(omega, g)
+  b <- dLogLike(g,y)
   return (a + b)
 }
 
-y_test <- gdata$y
 
-dlogpri(omega_test, g_test)
-dLogLike(y_test, g_test)
-
-dlogpri(omega_test, g_test) + dLogLike(y_test, g_test)
-dpsi(omega_test, g_test, y_test) == dlogpri(omega_test, g_test) + dLogLike(y_test, g_test)
 

@@ -51,7 +51,12 @@ dLogLike(g1,y1)
 # d2LogLike Function (Equation 7)
 d2LogLike(g1,y1)
 
-
+# dPsi Function (Equation 8)
+y_test <- gdata$y
+dLogPri(omega_test, g_test)
+dLogLike(g_test, y_test)
+dLogPri(omega_test, g_test) + dLogLike(g_test, y_test)
+dPsi(omega_test, g_test, y_test) == dLogPri(omega_test, g_test) + dLogLike(g_test, y_test)
 
 
 
