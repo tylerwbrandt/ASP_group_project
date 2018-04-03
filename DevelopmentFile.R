@@ -7,7 +7,10 @@ library(roxygen2)
 library(testthat)
 
 ## Set working directory
-setwd("~/Documents/GitHub/ASP_group_project")
+setwd("~/Documents/GitHub/ASP_group_project") # Gangyi
+setwd("~/Documents/Applied_Statistical_Programming/ASP_group_project") # Tyler
+setwd("/Users/rohangupta/Documents/WUSTL/SP2018/Pol Sci/ASP_group_project") # Rohan
+
 
 ## Creates package skeleton
 # Only run this the first time to create the skeleton 
@@ -22,6 +25,9 @@ check(current.code)
 
 
 ## Sample code to test that functions work 
+
+# Read in sample data
+data_montgomery <- read.csv("Data/exampleHITs.csv")
 
 # omega Function (Equation 1.5)
 gdata <- data.frame(c(1,1,1,2,2,2,3,3,4,4,4), c(2,3,4,1,3,4,1,4,1,2,3),
