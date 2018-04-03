@@ -8,7 +8,7 @@
 #' @return A matrix which contains information about how a document is compared with all other documents. 
 #' @author Group <\email{group@@wustl.edu}
 #' 
-#' @rdname Omega
+#' @rdname omega
 #' @export
 
 ## May have to change the input to this function regarding the dataset
