@@ -10,25 +10,23 @@
 #' 
 #' @rdname omega
 #' @export
-
-## May have to change the input to this function regarding the dataset
-## It is possible that we have to work with the SQL dataset and change it into what we need first
 omega <-function(dataset,sigma){
-  omega_matrix <- matrix(data = 0, nrow=(nrow(dataset)),ncol=(nrow(dataset)))
+  new_data <- cleaner(dataset)
+  omega_matrix <- matrix(data = 0, nrow=(nrow(new_data)),ncol=(nrow(new_data)))
   ## Iterate through matrix by row and column. Find entries comparisons that contain common doc
   ## Add sigma^2 or negative sigma^2 to those entries
-  for(i in 1:(nrow(dataset))){
-    for (j in 1:(nrow(dataset))){
-      if(dataset$first[i] == dataset$first[j]){
+  for(i in 1:(nrow(new_data))){
+    for (j in 1:(nrow(new_data))){
+      if(new_data$first[i] == new_data$first[j]){
         omega_matrix[i,j] <- omega_matrix[i,j] + sigma^2
       }
-      if(dataset$first[i] == dataset$second[j]){
+      if(new_data$first[i] == new_data$second[j]){
         omega_matrix[i,j] <- omega_matrix[i,j] - sigma^2
       }
-      if(dataset$second[i] == dataset$first[j]){
+      if(new_data$second[i] == new_data$first[j]){
         omega_matrix[i,j] <- omega_matrix[i,j] - sigma^2
       }
-      if(dataset$second[i] == dataset$second[j]){
+      if(new_data$second[i] == new_data$second[j]){
         omega_matrix[i,j] <- omega_matrix[i,j] + sigma^2
       }
     }
