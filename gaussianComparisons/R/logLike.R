@@ -5,7 +5,7 @@
 #' @param g An unknown vector of real numbers 
 #' @param y A vector of outcomes of pairwise comparison of documents 
 #'
-#' @return A vector containing the log-likelihood of each comparison 
+#' @return A numeric which is the sum of log-likelihoods of all comparisons  
 #' @author Group <\email{group@@wustl.edu}
 #' 
 #' @rdname logLike

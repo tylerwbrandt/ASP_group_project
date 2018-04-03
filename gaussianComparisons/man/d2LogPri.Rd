@@ -18,5 +18,5 @@ A matrix that is the second derivative of the log prior function
 Returns the negative of the inverse of the omega matrix
 }
 \author{
-Gangyi Sun <\email{gangyi.sun@wustl.edu}
+Group <\email{group@wustl.edu}
 }

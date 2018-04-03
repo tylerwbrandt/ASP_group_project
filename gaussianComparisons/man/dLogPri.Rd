@@ -18,5 +18,5 @@ A vector that is the derivative of the log prior function
 Returns the product of the negative of the inverse of the omega matrix multiplied by the g vector
 }
 \author{
-Gangyi Sun <\email{gangyi.sun@wustl.edu}
+Group <\email{group@wustl.edu}
 }

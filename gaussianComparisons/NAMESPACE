@@ -2,4 +2,5 @@
 
 export(d2LogPri)
 export(dLogPri)
+export(logLike)
 export(omega)

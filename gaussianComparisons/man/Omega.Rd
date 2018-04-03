@@ -18,5 +18,5 @@ A matrix which contains information about how a document is compared with all ot
 Returns the omega matrix given an input of pair-wise comparisons and a sigma value
 }
 \author{
-Gangyi Sun <\email{gangyi.sun@wustl.edu}
+Group <\email{group@wustl.edu}
 }
