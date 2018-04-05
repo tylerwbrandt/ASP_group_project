@@ -1,3 +1,19 @@
+#' Finding mu hat for equation 14 (bottom of page 4)
+#'
+#' Function that will find expected value of g for a new comparison
+#'
+#' @param doc1 The document id of the first document you wish to compare
+#' @param doc2 The document id of the second document you wish to compare
+#' @param dataset The dataset you are given with comparisons
+#' @param g An unknown vector of real numbers 
+#' @param sigma The hyperprior chosen to identify the latent space
+#' @param tolerance The tolerance to use for Newton Method convergence
+#'
+#' @return A double
+#' @author Group <\email{group@@wustl.edu}
+#' 
+#' @rdname muMaker
+#' @export
 muMaker <- function(doc1, doc2, dataset, g, sigma, tolerance){
   cleaned_data <- cleaner(dataset)
   omega1 <- omega(dataset, sigma)
@@ -20,6 +36,6 @@ muMaker <- function(doc1, doc2, dataset, g, sigma, tolerance){
   }
   little_omega_t <- t(little_omega)
   mu_hat <- little_omega_t %*% log_like_matrix
-  return (mu_hat)
+  return (mu_hat[1][1])
 }
 
