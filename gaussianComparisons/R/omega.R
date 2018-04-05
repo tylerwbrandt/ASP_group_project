@@ -33,5 +33,3 @@ omega <-function(dataset,sigma){
   }
   return (omega_matrix)
 }
-
-
