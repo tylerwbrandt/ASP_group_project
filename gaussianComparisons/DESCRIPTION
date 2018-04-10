@@ -22,4 +22,6 @@ Collate:
   'd2Psi.R'
   'newtonMethodPrequel.R'
   'newtonMethod.R'
+  'muMaker.R'
+  'rhoSquaredMaker.R'
 RoxygenNote: 6.0.1
