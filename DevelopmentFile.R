@@ -11,6 +11,7 @@ library(MASS)
 setwd("~/Documents/GitHub/ASP_group_project") # Gangyi
 setwd("~/Documents/Applied_Statistical_Programming/ASP_group_project") # Tyler
 setwd("/Users/rohangupta/Documents/WUSTL/SP2018/Pol Sci/ASP_group_project") # Rohan
+setwd("/Users/Marcus/Documents/ASP_group_project") # Marcus
 
 
 ## Creates package skeleton
