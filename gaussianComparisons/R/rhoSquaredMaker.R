@@ -41,5 +41,3 @@ rhoSquaredMaker <- function(doc1, doc2, dataset, g, sigma, tolerance){
   rho_squared <- 2 * sigma^2 - matrix_mult2[1][1]
   return(rho_squared)
 }
-
-rhoSquaredMaker(5069, 5097, data_mont, rep(0, 250), 2, .01)
