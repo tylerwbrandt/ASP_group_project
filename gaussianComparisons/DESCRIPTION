@@ -13,6 +13,7 @@ Suggests:
 Collate: 
   'cleaner.R'
   'omega.R'
+  'gPrior.R'
   'dLogPri.R'
   'd2LogPri.R'
   'logLike.R'
@@ -24,4 +25,5 @@ Collate:
   'newtonMethod.R'
   'muMaker.R'
   'rhoSquaredMaker.R'
+  'lowercaseH.R'
 RoxygenNote: 6.0.1
