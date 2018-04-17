@@ -13,9 +13,9 @@
 #' @rdname newtonMethod
 #' @export
 #' 
-newtonMethod <- function(omega, g, y, tolerance){
-  g_1 <- g
-  g_2 <- g_1 - newtonMethodPrequel(omega, g, y)
+newtonMethod <- function(omega, y, tolerance){
+  g_1 <- gPrior(omega)
+  g_2 <- g_1 - newtonMethodPrequel(omega, g_1, y)
   # Make sure each entry is less than the tolerance
   while (sum(ifelse(abs(g_2 - g_1) < tolerance, 1, 0)) != length(g_2)){
     g_1 <- g_2
