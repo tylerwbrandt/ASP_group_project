@@ -14,10 +14,10 @@
 #' 
 #' @rdname bigEGStar
 #' @export
-bigEGStar<-function(doc1, doc2, dataset, g, sigma, tolerance){
+bigEGStar<-function(doc1, doc2, dataset, sigma, tolerance){
   c<-sqrt(pi*log(2)/2)
-  rhoSquared<-rhoSquaredMaker(doc1, doc2, dataset, g, sigma, tolerance)
-  mu<-muMaker(doc1, doc2, dataset, g, sigma, tolerance)
+  rhoSquared<-rhoSquaredMaker(doc1, doc2, dataset, sigma, tolerance)
+  mu<-muMaker(doc1, doc2, dataset, sigma, tolerance)
   outside<-c/sqrt(rhoSquared+(c^2))
   inside<-exp(-1*mu^2/(2*rhoSquared+(c^2)))
   return(outside*inside)

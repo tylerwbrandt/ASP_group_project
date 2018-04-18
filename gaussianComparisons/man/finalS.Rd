@@ -2,10 +2,9 @@
 % Please edit documentation in R/finalS.R
 \name{finalS}
 \alias{finalS}
-\title{Finding final s (bottom of page 5)
-Function that will the s function}
+\title{Finding final s (bottom of page 5)}
 \usage{
-finalS(doc1, doc2, dataset, g, sigma, tolerance)
+finalS(doc1, doc2, dataset, sigma, tolerance)
 }
 \arguments{
 \item{doc1}{The document id of the first document you wish to compare}
@@ -13,8 +12,6 @@ finalS(doc1, doc2, dataset, g, sigma, tolerance)
 \item{doc2}{The document id of the second document you wish to compare}
 
 \item{dataset}{The dataset you are given with comparisons}
-
-\item{g}{An unknown vector of real numbers}
 
 \item{sigma}{The hyperprior chosen to identify the latent space}
 
@@ -24,7 +21,6 @@ finalS(doc1, doc2, dataset, g, sigma, tolerance)
 A double
 }
 \description{
-Finding final s (bottom of page 5)
 Function that will the s function
 }
 \author{

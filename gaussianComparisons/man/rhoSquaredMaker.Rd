@@ -4,7 +4,7 @@
 \alias{rhoSquaredMaker}
 \title{Finding rho hat squared for equation 15 (top of page 5)}
 \usage{
-rhoSquaredMaker(doc1, doc2, dataset, g, sigma, tolerance)
+rhoSquaredMaker(doc1, doc2, dataset, sigma, tolerance)
 }
 \arguments{
 \item{doc1}{The document id of the first document you wish to compare}
@@ -12,8 +12,6 @@ rhoSquaredMaker(doc1, doc2, dataset, g, sigma, tolerance)
 \item{doc2}{The document id of the second document you wish to compare}
 
 \item{dataset}{The dataset you are given with comparisons}
-
-\item{g}{An unknown vector of real numbers}
 
 \item{sigma}{The hyperprior chosen to identify the latent space}
 

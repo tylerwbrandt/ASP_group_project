@@ -5,7 +5,6 @@
 #' @param doc1 The document id of the first document you wish to compare
 #' @param doc2 The document id of the second document you wish to compare
 #' @param dataset The dataset you are given with comparisons
-#' @param g An unknown vector of real numbers 
 #' @param sigma The hyperprior chosen to identify the latent space
 #' @param tolerance The tolerance to use for Newton Method convergence
 #'
@@ -14,10 +13,10 @@
 #' 
 #' @rdname rhoSquaredMaker
 #' @export
-rhoSquaredMaker <- function(doc1, doc2, dataset, g, sigma, tolerance){
+rhoSquaredMaker <- function(doc1, doc2, dataset, sigma, tolerance){
   cleaned_data <- cleaner(dataset)
   omega1 <- omega(dataset, sigma)
-  g_hat <- newtonMethod(omega1, g, cleaned_data$y, tolerance)
+  g_hat <- newtonMethod(omega1, cleaned_data$y, tolerance)
   little_omega <- rep(0, nrow(cleaned_data))
   for (i in 1:nrow(cleaned_data)){
     if (doc1 == cleaned_data$first[i]){

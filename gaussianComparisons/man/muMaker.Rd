@@ -4,7 +4,7 @@
 \alias{muMaker}
 \title{Finding mu hat for equation 14 (bottom of page 4)}
 \usage{
-muMaker(doc1, doc2, dataset, g, sigma, tolerance)
+muMaker(doc1, doc2, dataset, sigma, tolerance)
 }
 \arguments{
 \item{doc1}{The document id of the first document you wish to compare}
@@ -12,8 +12,6 @@ muMaker(doc1, doc2, dataset, g, sigma, tolerance)
 \item{doc2}{The document id of the second document you wish to compare}
 
 \item{dataset}{The dataset you are given with comparisons}
-
-\item{g}{An unknown vector of real numbers}
 
 \item{sigma}{The hyperprior chosen to identify the latent space}
 

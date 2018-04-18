@@ -4,7 +4,7 @@
 \alias{bigEGStar}
 \title{Finding big E of g star  (middle of page 6)}
 \usage{
-bigEGStar(doc1, doc2, dataset, g, sigma, tolerance)
+bigEGStar(doc1, doc2, dataset, sigma, tolerance)
 }
 \arguments{
 \item{doc1}{The document id of the first document you wish to compare}
@@ -13,11 +13,11 @@ bigEGStar(doc1, doc2, dataset, g, sigma, tolerance)
 
 \item{dataset}{The dataset you are given with comparisons}
 
-\item{g}{An unknown vector of real numbers}
-
 \item{sigma}{The hyperprior chosen to identify the latent space}
 
 \item{tolerance}{The tolerance to use for Newton Method convergence}
+
+\item{g}{An unknown vector of real numbers}
 }
 \value{
 A double
