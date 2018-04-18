@@ -4,16 +4,16 @@
 \alias{newtonMethod}
 \title{Newton appriximation function (Equation 9.5)}
 \usage{
-newtonMethod(omega, g, y, tolerance)
+newtonMethod(omega, y, tolerance)
 }
 \arguments{
 \item{omega}{A matrix which contains information about how a document is compared with all other documents.}
 
-\item{g}{An unknown vector of real numbers}
-
 \item{y}{A vector of outcomes of pairwise comparison of documents}
 
 \item{tolerance}{A given value of tolerance}
+
+\item{g}{An unknown vector of real numbers}
 }
 \value{
 A vector gHat which is the approximate distribution
