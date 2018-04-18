@@ -40,10 +40,8 @@ maxInfoComp <- function(dataset, sigma, tolerance){
   }
   # Calculate s values for each new comparison
   sSet <- NULL
-  omega_matrix <- omega(dataset, sigma)
-  g_initial <- gPrior(omega)
   for (i in 1:ncol(x)){
-    sValue <- finalS(x[1][i], x[2][i], data_montgomery, g_intial, 1, .01)
+    sValue <- finalS(x[1,i], x[2,i], data_montgomery, 1, .01)
     sSet <- c(sSet, sValue)
   }
   # Find maximum information

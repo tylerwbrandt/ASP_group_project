@@ -15,6 +15,6 @@
 #' @export
 finalS<-function(doc1, doc2, dataset, sigma, tolerance){
   hPart<-lowercaseH(muMaker(doc1, doc2, dataset, sigma, tolerance)/sqrt(1+rhoSquaredMaker(doc1, doc2, dataset, sigma, tolerance)))
-  ePart<- bigEGstar(doc1, doc2, dataset, sigma, tolerance)
+  ePart<- bigEGStar(doc1, doc2, dataset, sigma, tolerance)
   return(hPart-ePart)
 }

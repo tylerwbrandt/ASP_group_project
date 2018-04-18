@@ -43,7 +43,7 @@ muMaker(5058, 5086, data_montgomery, 2, 0.1)
 rhoSquaredMaker(5059, 5091, data_montgomery, 2, 0.01)
 rhoSquaredMaker(5058, 5086, data_montgomery, 2, 0.01)
 
-# bigEGStar Function 
+# bigEGStar Function [CURRENTLY DOESNT WORK BECAUSE OF rhoSquaredMaker]
 bigEGStar(5059, 5091, data_montgomery, 2, 0.01)
 
 # lowercaseH Function
