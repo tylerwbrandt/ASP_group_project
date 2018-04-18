@@ -19,14 +19,24 @@ maxInfoComp <- function(dataset, sigma, tolerance){
     j <- 1
     while (j <= nrow(new_data)){
       if (x[1, i] == new_data$first[j] & x[2, i] == new_data$second[j]){
-        x <- x[, -i]
+        x[1,i] <- 0
+        x[2,i] <- 0
         j <- 0
       } else if (x[1, i] == new_data$second[j] & x[2, i] == new_data$first[j]){
-        x <- x[, -i]
+        x[1,i] <- 0
+        x[2,i] <- 0
         j <- 0
       }
       j <- j + 1
     }
+  }
+  i <- 1
+  while (i <= ncol(x)){
+    if (x[1,i]==0 & x[2,i]==0){
+      x<-x[,-i]
+      i<-0
+    }
+    i<-i+1
   }
   # Calculate s values for each new comparison
   sSet <- NULL
