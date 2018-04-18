@@ -19,7 +19,6 @@ cleaner<- function(dataset){
   newset3<- merge(newset1,newset2[, c(1,2)], by = "comparison_id")
   newset3$y<- ifelse(newset3$y==0,-1,1)
   return(newset3)
-  
 }
 
 

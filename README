@@ -1,0 +1,62 @@
+List of Functions in the gaussianComparisons Package 
+
+cleaner(dataset)
+  Returns: A dataframe, with each row containing information about one comparison.
+  Other Functions Used: NONE 
+  Other Notes:  Input 'dataset' should be of format identical to that of "exampleHITs.csv".
+                This function is called in other functions to clean the dataset into a workable format. 
+  
+omega(dataset, sigma)
+  Returns: The omega matrix (each element in the matrix is calculated using Equation 1.5), a matrix. 
+  Other Functions Used: cleaner 
+
+gPrior(omega)
+  Returns: The prior on the unknown vector g (Equation 1), a vector.
+  Other Functions Used: NONE
+  Other Notes:  This function is called in newtonMethod to find g_hat, which is then used in ________
+  
+dLogPri(omega, g)
+  Returns: The derivative of the log prior function (Equation 4), a vector.
+  Other Functions Used: NONE
+  
+d2LogPri(omega, g)
+  Returns: The second derivative of the log prior function (Equation 5), a matrix.
+  Other Functions Used: NONE
+  
+logLike(g, y)
+  Returns: The log-likelihood function (Equation 5.9), a scalar. 
+  Other Functions Used: NONE
+  Other Notes:  y is a vector of 1s and -1s, representing the results of each comparison.
+  
+dLogLike(g, y)
+  Returns: The derivative of the log-likelihood function (Equation 6), a vector. 
+  Other Functions Used: NONE
+
+d2LogLike(g, y)
+  Returns: The second derivative of the log-likelihood function (Equation 7), a matrix. 
+  Other Functions Used: dLogLike
+  
+dPsi(omega, g, y)
+  Returns: The derivative of the log of the numerator of the full posterior equation (Equation 8), a vector.
+  Other Functions Used: dLogPri, dLogLike
+  
+d2Psi(omega, g, y)
+  Returns: The second derivative of the log of the numerator of the full posterior equation (Equation 9), a matrix.
+  Other Functions Used: d2LogLike, d2LogPri
+
+newtonMethodPrequel(omega, g, y)
+  Returns: The third and last term of the Newton's Method equation (third term of Equation 9.5), a vector.
+  Other Functions Used: dPsi, d2Psi
+  Other Notes:  This function will be called in the newtonMethod function to find g_hat. 
+  
+newtonMethod(omega, y, tolerance)
+  Returns: g_hat (Equation 9.5) , a vector. 
+  Other Functions Used: gPrior, newtonMethodPrequel
+  Other Notes:  gPrior is called in this function to find the prior on g, which is then passed into newtonMethodPrequel and                   subsequently the other functions that require g as an input. 
+  
+muMaker
+rhoSquaredMaker
+lowercaseH
+bigEGStar
+finalS
+maxInfoComp
