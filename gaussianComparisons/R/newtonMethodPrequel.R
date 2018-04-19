@@ -6,7 +6,7 @@
 #' @param g An unknown vector of real numbers 
 #' @param y A vector of outcomes of pairwise comparison of documents 
 #'
-#' @return A matrix
+#' @return A vector
 #' @author Group <\email{group@@wustl.edu}
 #' 
 #' @rdname newtonMethodPrequel

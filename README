@@ -54,9 +54,28 @@ newtonMethod(omega, y, tolerance)
   Other Functions Used: gPrior, newtonMethodPrequel
   Other Notes:  gPrior is called in this function to find the prior on g, which is then passed into newtonMethodPrequel and                   subsequently the other functions that require g as an input. 
   
-muMaker
-rhoSquaredMaker
-lowercaseH
-bigEGStar
-finalS
-maxInfoComp
+muMaker(doc1, doc2, dataset, sigma, tolerance)
+  Returns: mu_hat, the expected value of g for a new comparison (last equation on page 4), a scalar. 
+  Other Functions Used: cleaner, omega, newtonMethod, dLogLike
+  
+rhoSquaredMaker(doc1, doc2, dataset, sigma, tolerance)
+  Returns: rho_hat_square, calculated from the Rasmussen and Williams equation (first equation on page 5), a scalar. 
+  Other Functions Used: cleaner, omega, newtonMethod, d2Psi
+  Other Notes:  Currently returning a negative value, which should not be the case. 
+  
+lowercaseH(x)
+  Returns: The output from the binary entropy function given a constant x (first equation on page 6), a scalar. 
+  Other Functions Used: NONE 
+  
+bigEGStar(doc1, doc2, dataset, sigma, tolerance)
+  Returns: The approximation of the second term of the s(z*) equation (second equation from top of page 6), a scalar. 
+  Other Functions Used: rhoSquaredMaker, muMaker
+  
+finalS(doc1, doc2, dataset, sigma, tolerance)
+  Returns: The expected information gain s(z*) by comparing doc1 and doc2, (second equation from bottom of page 5), a scalar.
+  Other Functions Used: bigEGStar, lowercaseH, muMaker, rhoSquaredMaker
+  
+maxInfoComp(dataset, sigma, tolerance)
+  Returns: The ids of the 2 documents that, if compared next, will give the most amount of additional information, a vector.  
+  Other Functions Used: cleaner, finalS
+

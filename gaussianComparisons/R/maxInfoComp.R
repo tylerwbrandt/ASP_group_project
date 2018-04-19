@@ -41,13 +41,13 @@ maxInfoComp <- function(dataset, sigma, tolerance){
   # Calculate s values for each new comparison
   sSet <- NULL
   for (i in 1:ncol(x)){
-    sValue <- finalS(x[1,i], x[2,i], data_montgomery, 1, .01)
+    sValue <- finalS(x[1,i], x[2,i], data_montgomery, sigma, tolerance)
     sSet <- c(sSet, sValue)
   }
   # Find maximum information
   indexMax <- which.max(sSet)
   # Return comparison document ids
-  return (c(x[1][indexMax], x[2][indexMax]))
+  return (c(x[1,indexMax], x[2,indexMax]))
 }
 
 

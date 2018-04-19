@@ -14,7 +14,7 @@ newtonMethodPrequel(omega, g, y)
 \item{y}{A vector of outcomes of pairwise comparison of documents}
 }
 \value{
-A matrix
+A vector
 }
 \description{
 Function needed for the Newton Approximation method
