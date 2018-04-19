@@ -104,4 +104,8 @@ a<-maxInfoComp(data_montgomery, 2, 0.01)
 # # newtonMethod Function (Equation 9.5)
 # newtonMethod(omega_test, y_test, .01)
 
+library(microbenchmark)
+microbenchmark(finalS(5059, 5091, omega1, cleaned_data, 2, 0.01), 10)
 
+omega1 <- omega(data_montgomery, 2)
+cleaned_data <- cleaner(data_montgomery)

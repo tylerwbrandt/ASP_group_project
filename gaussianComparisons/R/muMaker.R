@@ -13,7 +13,7 @@
 #' 
 #' @rdname muMaker
 #' @export
-muMaker <- function(doc1, doc2, omega1, sigma, tolerance){
+muMaker <- function(doc1, doc2, omega1, cleaned_data, sigma, tolerance){
   # cleaned_data <- cleaner(dataset)
   # omega1 <- omega(dataset, sigma)
   g_hat <- newtonMethod(omega1, cleaned_data$y, tolerance)

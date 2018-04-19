@@ -13,8 +13,8 @@
 #' 
 #' @rdname finalS
 #' @export
-finalS<-function(doc1, doc2, omega1, sigma, tolerance){
-  hPart<-lowercaseH(muMaker(doc1, doc2, omega1, sigma, tolerance)/sqrt(1+rhoSquaredMaker(doc1, doc2, omega1, sigma, tolerance)))
-  ePart<- bigEGStar(doc1, doc2, omega1, sigma, tolerance)
+finalS<-function(doc1, doc2, omega1, cleaned_data, sigma, tolerance){
+  hPart<-lowercaseH(muMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance)/sqrt(1+rhoSquaredMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance)))
+  ePart<- bigEGStar(doc1, doc2, omega1, cleaned_data, sigma, tolerance)
   return(hPart-ePart)
 }
