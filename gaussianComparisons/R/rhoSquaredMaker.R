@@ -13,9 +13,9 @@
 #' 
 #' @rdname rhoSquaredMaker
 #' @export
-rhoSquaredMaker <- function(doc1, doc2, dataset, sigma, tolerance){
+rhoSquaredMaker <- function(doc1, doc2, omega1, sigma, tolerance){
   cleaned_data <- cleaner(dataset)
-  omega1 <- omega(dataset, sigma)
+  #omega1 <- omega(dataset, sigma)
   g_hat <- newtonMethod(omega1, cleaned_data$y, tolerance)
   little_omega <- rep(0, nrow(cleaned_data))
   for (i in 1:nrow(cleaned_data)){
