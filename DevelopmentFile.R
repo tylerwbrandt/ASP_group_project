@@ -29,7 +29,7 @@ check(current.code)
 
 ## Sample code to test that functions work 
 # cleaner Function
-data_montgomery <- read.csv("gaussianComparisons/Data/exampleHITs.csv")
+data_montgomery <- read.csv("gaussianComparisons/data/exampleHITs.csv")
 data_clean <- cleaner(data_montgomery)
 omega_data <- omega(data_montgomery,2)
 
