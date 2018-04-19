@@ -29,7 +29,7 @@ check(current.code)
 
 ## Sample code to test that functions work 
 # cleaner Function
-data_montgomery <- read.csv("Data/exampleHITs.csv")
+data_montgomery <- read.csv("gaussianComparisons/data/exampleHITs.csv")
 data_clean <- cleaner(data_montgomery)
 omega_data <- omega(data_montgomery,2)
 
@@ -101,4 +101,8 @@ a<-maxInfoComp(data_montgomery, 2, 0.01)
 # 
 # # newtonMethod Function (Equation 9.5)
 # newtonMethod(omega_test, y_test, .01)
+
+
+
+maxInfoComp(dataset = data_montgomery, sigma = 2, tolerance = .01)
 

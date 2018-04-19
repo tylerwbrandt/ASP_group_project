@@ -13,9 +13,9 @@
 #' 
 #' @rdname muMaker
 #' @export
-muMaker <- function(doc1, doc2, dataset, sigma, tolerance){
-  cleaned_data <- cleaner(dataset)
-  omega1 <- omega(dataset, sigma)
+muMaker <- function(doc1, doc2, omega1, sigma, tolerance){
+  # cleaned_data <- cleaner(dataset)
+  # omega1 <- omega(dataset, sigma)
   g_hat <- newtonMethod(omega1, cleaned_data$y, tolerance)
   log_like_matrix <- dLogLike(g_hat, cleaned_data$y)
   little_omega <- rep(0, nrow(cleaned_data))
