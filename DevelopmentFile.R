@@ -6,6 +6,7 @@ library(devtools)
 library(roxygen2)
 library(testthat)
 library(MASS)
+library(ANTsR)
 
 ## Set working directory
 setwd("~/Documents/GitHub/ASP_group_project") # Gangyi
@@ -29,7 +30,7 @@ check(current.code)
 
 ## Sample code to test that functions work 
 # cleaner Function
-data_montgomery <- read.csv("gaussianComparisons/data/exampleHITs.csv")
+data_montgomery <- read.csv("gaussianComparisons/Data/exampleHITs.csv")
 data_clean <- cleaner(data_montgomery)
 omega_data <- omega(data_montgomery,2)
 
@@ -53,6 +54,7 @@ lowercaseH(0.1)
 finalS(5059, 5091, data_montgomery, 2, 0.01)
 
 # maxInfoComp Function [CURRENTLY DOESNT WORK BECAUSE OF rhoSquaredMaker]
+# [CURRENTLY TAKES ABOUT 4 HOURS TO RUN]
 a<-maxInfoComp(data_montgomery, 2, 0.01)
 
 
@@ -102,7 +104,4 @@ a<-maxInfoComp(data_montgomery, 2, 0.01)
 # # newtonMethod Function (Equation 9.5)
 # newtonMethod(omega_test, y_test, .01)
 
-
-
-maxInfoComp(dataset = data_montgomery, sigma = 2, tolerance = .01)
 

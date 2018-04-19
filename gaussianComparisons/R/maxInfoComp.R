@@ -11,44 +11,20 @@
 #' 
 #' @rdname maxInfoComp
 #' @export
-maxInfoComp <- function(dataset, sigma, tolerance){
+maxInfoComp <- function(dataset, sigma, tolerance, nComp){
   x <- combn(unique(dataset$document_id), 2)
-  new_data <- cleaner(dataset)
+  omega1 <- omega(dataset, sigma)
   # Remove comparisons already made
-  for (i in 1:ncol(x)){
-    j <- 1
-    while (j <= nrow(new_data)){
-      if (x[1, i] == new_data$first[j] & x[2, i] == new_data$second[j]){
-        x[1,i] <- 0
-        x[2,i] <- 0
-        j <- 0
-      } else if (x[1, i] == new_data$second[j] & x[2, i] == new_data$first[j]){
-        x[1,i] <- 0
-        x[2,i] <- 0
-        j <- 0
-      }
-      j <- j + 1
-    }
-  }
-  i <- 1
-  while (i <= ncol(x)){
-    if (x[1,i]==0 & x[2,i]==0){
-      x<-x[,-i]
-      i<-0
-    }
-    i<-i+1
-  }
   # Calculate s values for each new comparison
-  sSet <- NULL
+  sSet <- list()
   for (i in 1:ncol(x)){
-    sValue <- finalS(x[1,i], x[2,i], data_montgomery, sigma, tolerance)
-    sSet <- c(sSet, sValue)
+    sValue <- finalS(x[1,i], x[2,i], omega1, sigma, tolerance)
+    sSet[[i]] <- c(x[1,i], x[2,i], sValue)
   }
   # Find maximum information
-  indexMax <- which.max(sSet)
+  sSet <- sSet[order(sapply(sSet, function(x) x[3]), decreasing = TRUE)]
   # Return comparison document ids
-  return (c(x[1,indexMax], x[2,indexMax]))
+  return (sSet[1:nComp])
 }
-
 
 

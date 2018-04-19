@@ -4,7 +4,7 @@
 \alias{maxInfoComp}
 \title{Finding maximum information comparison}
 \usage{
-maxInfoComp(dataset, sigma, tolerance)
+maxInfoComp(dataset, sigma, tolerance, nComp)
 }
 \arguments{
 \item{dataset}{The dataset you are given with comparisons}
