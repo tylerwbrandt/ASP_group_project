@@ -36,26 +36,26 @@ omega_data <- omega(data_montgomery,2)
 
 # muMaker Function
 # (5059,5091) and (5058,5086) are comparisons that have not been made in the sample data
-muMaker(5059, 5091, data_montgomery, 2, 0.1)
-muMaker(5058, 5086, data_montgomery, 2, 0.1)
+muMaker(5059, 5091, omega_data, data_clean, 2, 0.1)
+muMaker(5058, 5086, omega_data, data_clean, 2, 0.1)
 
 # rhoSquaredMaker Function [CURRENTLY RETURNING NEGATIVE RESULTS]
 # (5059,5091) and (5058,5086) are comparisons that have not been made in the sample data
-rhoSquaredMaker(5059, 5091, data_montgomery, 2, 0.01)
-rhoSquaredMaker(5058, 5086, data_montgomery, 2, 0.01)
+rhoSquaredMaker(5059, 5091, omega_data, data_clean, 2, 0.01)
+rhoSquaredMaker(5058, 5086, omega_data, data_clean, 2, 0.01)
 
 # bigEGStar Function [CURRENTLY DOESNT WORK BECAUSE OF rhoSquaredMaker]
-bigEGStar(5059, 5091, data_montgomery, 2, 0.01)
+bigEGStar(5059, 5091, omega_data, data_clean, 2, 0.01)
 
 # lowercaseH Function
 lowercaseH(0.1) 
 
 # finalS Function [CURRENTLY DOESNT WORK BECAUSE OF rhoSquaredMaker]
-finalS(5059, 5091, data_montgomery, 2, 0.01)
+finalS(5059, 5091, omega_data, data_clean, 2, 0.01)
 
 # maxInfoComp Function [CURRENTLY DOESNT WORK BECAUSE OF rhoSquaredMaker]
 # [CURRENTLY TAKES ABOUT 4 HOURS TO RUN]
-a<-maxInfoComp(data_montgomery, 2, 0.01)
+a<-maxInfoComp(data_montgomery, 2, 0.01, 10)
 
 
 

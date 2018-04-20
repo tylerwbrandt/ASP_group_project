@@ -4,7 +4,8 @@
 #'
 #' @param doc1 The document id of the first document you wish to compare
 #' @param doc2 The document id of the second document you wish to compare
-#' @param dataset The dataset you are given with comparisons
+#' @param omega1 The omega matrix
+#' @param cleaned_data The dataset you are given with comparisons, cleaned using cleaner 
 #' @param sigma The hyperprior chosen to identify the latent space
 #' @param tolerance The tolerance to use for Newton Method convergence
 #'

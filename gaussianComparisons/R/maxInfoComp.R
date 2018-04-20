@@ -5,6 +5,7 @@
 #' @param dataset The dataset you are given with comparisons
 #' @param sigma The hyperprior chosen to identify the latent space
 #' @param tolerance The tolerance to use for Newton Method convergence
+#' @param nComp The number of comparions that the user wants to do in the next round of comparisons 
 #'
 #' @return A vector with two entries containing document ids for your new comparison
 #' @author Group <\email{group@@wustl.edu}
