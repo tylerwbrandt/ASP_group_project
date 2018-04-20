@@ -13,7 +13,7 @@ setwd("~/Documents/GitHub/ASP_group_project") # Gangyi
 setwd("~/Documents/Applied_Statistical_Programming/ASP_group_project") # Tyler
 setwd("/Users/rohangupta/Documents/WUSTL/SP2018/Pol Sci/ASP_group_project") # Rohan
 setwd("/Users/Marcus/Documents/ASP_group_project") # Marcus
-
+getwd()
 
 ## Creates package skeleton
 # Only run this the first time to create the skeleton 
@@ -33,11 +33,24 @@ check(current.code)
 data_montgomery <- read.csv("gaussianComparisons/Data/exampleHITs.csv")
 data_clean <- cleaner(data_montgomery)
 omega_data <- omega(data_montgomery,2)
+table(unique(omega_data))
+
+draw<-gPrior(omega_data)
+draw[data_clean$first==5053]
+draw[data_clean$second==5053]
+draw[data_clean$second==5069]
+draw[data_clean$first==5069]
+
+
+my.g.hat<-newtonMethod(omega_data, data_clean$y, tol=.00000001)
+plot(my.g.hat, data_clean$y)
+head(data_clean)
 
 # muMaker Function
 # (5059,5091) and (5058,5086) are comparisons that have not been made in the sample data
 muMaker(5059, 5091, omega_data, data_clean, 2, 0.1)
 muMaker(5058, 5086, omega_data, data_clean, 2, 0.1)
+muMaker(5100, 5096, omega_data, data_clean, 2, 0.1)
 
 # rhoSquaredMaker Function [CURRENTLY RETURNING NEGATIVE RESULTS]
 # (5059,5091) and (5058,5086) are comparisons that have not been made in the sample data

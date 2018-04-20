@@ -12,4 +12,5 @@
 
 gPrior<-function(omega){
   gPrior<-mvrnorm(n=1,rep(0,ncol(omega)),omega)
+  return(gPrior)
 }

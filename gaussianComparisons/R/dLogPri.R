@@ -16,7 +16,7 @@ dLogPri <- function(omega, g){
     diag(omega) <- diag(omega) + .01
   }
   inv_omega <- solve(omega)
-  neg_inv_omega <- -inv_omega
+  neg_inv_omega <- -1*inv_omega
   return (neg_inv_omega %*% g)
 }
 
