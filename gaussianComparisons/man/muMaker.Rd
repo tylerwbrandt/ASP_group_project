@@ -4,18 +4,20 @@
 \alias{muMaker}
 \title{Finding mu hat for equation 14 (bottom of page 4)}
 \usage{
-muMaker(doc1, doc2, omega1, sigma, tolerance)
+muMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance)
 }
 \arguments{
 \item{doc1}{The document id of the first document you wish to compare}
 
 \item{doc2}{The document id of the second document you wish to compare}
 
+\item{omega1}{The omega matrix}
+
+\item{cleaned_data}{The dataset you are given with comparisons, cleaned using cleaner}
+
 \item{sigma}{The hyperprior chosen to identify the latent space}
 
 \item{tolerance}{The tolerance to use for Newton Method convergence}
-
-\item{dataset}{The dataset you are given with comparisons}
 }
 \value{
 A double

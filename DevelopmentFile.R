@@ -6,7 +6,7 @@ library(devtools)
 library(roxygen2)
 library(testthat)
 library(MASS)
-library(ANTsR)
+# library(ANTsR)
 
 ## Set working directory
 setwd("~/Documents/GitHub/ASP_group_project") # Gangyi
@@ -54,7 +54,7 @@ lowercaseH(0.1)
 finalS(5059, 5091, omega_data, data_clean, 2, 0.01)
 
 # maxInfoComp Function [CURRENTLY DOESNT WORK BECAUSE OF rhoSquaredMaker]
-# [CURRENTLY TAKES ABOUT 4 HOURS TO RUN]
+# [CURRENTLY TAKES ABOUT 1HR ++ TO RUN]
 a<-maxInfoComp(data_montgomery, 2, 0.01, 10)
 
 
@@ -62,6 +62,10 @@ a<-maxInfoComp(data_montgomery, 2, 0.01, 10)
 library(microbenchmark)
 microbenchmark(finalS(5059, 5091, omega_data, data_clean, 2, 0.01), times = 50)
 finalS(5059, 5091, omega_data, data_clean, 2, 0.01)
+
+
+
+
 
 
 

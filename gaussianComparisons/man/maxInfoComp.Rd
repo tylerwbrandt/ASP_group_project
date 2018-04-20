@@ -12,6 +12,8 @@ maxInfoComp(dataset, sigma, tolerance, nComp)
 \item{sigma}{The hyperprior chosen to identify the latent space}
 
 \item{tolerance}{The tolerance to use for Newton Method convergence}
+
+\item{nComp}{The number of comparions that the user wants to do in the next round of comparisons}
 }
 \value{
 A vector with two entries containing document ids for your new comparison
