@@ -62,6 +62,7 @@ bigEGStar(5059, 5091, omega_data, data_clean, 2, 0.01)
 
 # lowercaseH Function
 lowercaseH(0.1) 
+a<-(muMaker(5059, 5091, omega_data, data_clean, 2, 0.1))/sqrt(1+rhoSquaredMaker(5059, 5091, omega_data, data_clean, 2, 0.01))
 
 # finalS Function [CURRENTLY DOESNT WORK BECAUSE OF rhoSquaredMaker]
 finalS(5059, 5091, omega_data, data_clean, 2, 0.01)

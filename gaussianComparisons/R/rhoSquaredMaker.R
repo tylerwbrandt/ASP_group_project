@@ -33,7 +33,7 @@ rhoSquaredMaker <- function(doc1, doc2, omega1, cleaned_data, sigma, tolerance){
   }
   little_omega_t <- t(little_omega)
   omega_hat <- d2Psi(omega1, g_hat, cleaned_data$y)
-#  omega_hat_inverse <- solve(omega_hat)
+  # omega_hat_inverse <- solve(omega_hat)
   matrix_mult1 <- omega_hat %*% little_omega
   matrix_mult2 <- little_omega_t %*% matrix_mult1
   rho_squared <- 2 * sigma^2 - matrix_mult2

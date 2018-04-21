@@ -13,7 +13,7 @@ omega(dataset, sigma)
 gPrior(omega)
   Returns: The prior on the unknown vector g (Equation 1), a vector.
   Other Functions Used: NONE
-  Other Notes:  This function is called in newtonMethod to find g_hat, which is then used in ________
+  Other Notes:  This function is called in newtonMethod to find g_hat.
   
 dLogPri(omega, g)
   Returns: The derivative of the log prior function (Equation 4), a vector.
@@ -76,7 +76,7 @@ finalS(doc1, doc2, omega1, cleaned_data, sigma, tolerance)
   Other Functions Used: bigEGStar, lowercaseH, muMaker, rhoSquaredMaker
   
 maxInfoComp(dataset, sigma, tolerance, nComp)
-  Returns: nComp number of comparisons (identified by the ids of the 2 documents to be compared for each comparison) that,
-           if compared next, will give the most amount of additional information, a vector.  
+  Returns: nComp number of comparisons (identified by the ids of the 2 documents to be compared for each comparison) 
+            that, if compared next, will give the most amount of additional information, a vector.  
   Other Functions Used: cleaner, omega, finalS
 
