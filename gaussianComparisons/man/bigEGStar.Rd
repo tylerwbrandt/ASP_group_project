@@ -4,7 +4,7 @@
 \alias{bigEGStar}
 \title{Finding big E of g star  (middle of page 6)}
 \usage{
-bigEGStar(doc1, doc2, omega1, cleaned_data, sigma, tolerance)
+bigEGStar(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega)
 }
 \arguments{
 \item{doc1}{The document id of the first document you wish to compare}
@@ -18,6 +18,8 @@ bigEGStar(doc1, doc2, omega1, cleaned_data, sigma, tolerance)
 \item{sigma}{The hyperprior chosen to identify the latent space}
 
 \item{tolerance}{The tolerance to use for Newton Method convergence}
+
+\item{little_omega}{The covariance vector for a theoretical new observation on the dataset}
 }
 \value{
 A double

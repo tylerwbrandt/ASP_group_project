@@ -6,7 +6,6 @@ library(devtools)
 library(roxygen2)
 library(testthat)
 library(MASS)
-# library(ANTsR)
 
 ## Set working directory
 setwd("~/Documents/GitHub/ASP_group_project") # Gangyi
