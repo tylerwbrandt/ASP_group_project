@@ -8,16 +8,17 @@
 #' @param cleaned_data The dataset you are given with comparisons, cleaned using cleaner 
 #' @param sigma The hyperprior chosen to identify the latent space
 #' @param tolerance The tolerance to use for Newton Method convergence
+#' @param little_omega The covariance vector for a theoretical new observation on the dataset
 #'
 #' @return A double
 #' @author Group <\email{group@@wustl.edu}
 #' 
 #' @rdname bigEGStar
 #' @export
-bigEGStar<-function(doc1, doc2, omega1, cleaned_data, sigma, tolerance){
+bigEGStar<-function(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega){
   c<-sqrt(pi*log(2)/2)
-  rhoSquared<-rhoSquaredMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance)
-  mu<-muMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance)
+  rhoSquared<-rhoSquaredMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega)
+  mu<-muMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega)
   outside<-c/sqrt(rhoSquared+(c^2))
   inside<-exp(-1*mu^2/(2*rhoSquared+(c^2)))
   return(outside*inside)

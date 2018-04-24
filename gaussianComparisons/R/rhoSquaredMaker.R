@@ -8,29 +8,15 @@
 #' @param cleaned_data The dataset you are given with comparisons, cleaned using cleaner 
 #' @param sigma The hyperprior chosen to identify the latent space
 #' @param tolerance The tolerance to use for Newton Method convergence
+#' @param little_omega The covariance vector for a theoretical new observation on the dataset 
 #'
 #' @return A double
 #' @author Group <\email{group@@wustl.edu}
 #' 
 #' @rdname rhoSquaredMaker
 #' @export
-rhoSquaredMaker <- function(doc1, doc2, omega1, cleaned_data, sigma, tolerance){
+rhoSquaredMaker <- function(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega){
   g_hat <- newtonMethod(omega1, cleaned_data$y, tolerance)
-  little_omega <- rep(0, nrow(cleaned_data))
-  for (i in 1:nrow(cleaned_data)){
-    if (doc1 == cleaned_data$first[i]){
-      little_omega[i] <- little_omega[i] + sigma^2
-    }
-    if (doc1 == cleaned_data$second[i]){
-      little_omega[i] <- little_omega[i] - sigma^2
-    }
-    if (doc2 == cleaned_data$first[i]){
-      little_omega[i] <- little_omega[i] - sigma^2
-    }
-    if (doc2 == cleaned_data$second[i]){
-      little_omega[i] <- little_omega[i] + sigma^2
-    }
-  }
   little_omega_t <- t(little_omega)
   omega_hat <- d2Psi(omega1, g_hat, cleaned_data$y)
   # omega_hat_inverse <- solve(omega_hat)
