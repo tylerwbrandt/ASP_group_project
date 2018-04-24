@@ -30,7 +30,7 @@ finalS<-function(doc1, doc2, omega1, cleaned_data, sigma, tolerance){
       little_omega[i] <- little_omega[i] + sigma^2
     }
   }
-  hPart<-lowercaseH(abs(muMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega))/sqrt(1+rhoSquaredMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega)))
+  hPart<-lowercaseH(pnorm(muMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega))/sqrt(1+rhoSquaredMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega)))
   ePart<- bigEGStar(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega)
   return(hPart-ePart)
 }
