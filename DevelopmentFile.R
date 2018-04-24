@@ -45,29 +45,29 @@ my.g.hat<-newtonMethod(omega_data, data_clean$y, tol=.00000001)
 plot(my.g.hat, data_clean$y)
 head(data_clean)
 
-# muMaker Function
+# muMaker Function [Doesn't work independnetly anymore because little_omega only created in finalS]
 # (5059,5091) and (5058,5086) are comparisons that have not been made in the sample data
-muMaker(5059, 5091, omega_data, data_clean, 2, 0.1)
-muMaker(5058, 5086, omega_data, data_clean, 2, 0.1)
-muMaker(5100, 5096, omega_data, data_clean, 2, 0.1)
+# muMaker(5059, 5091, omega_data, data_clean, 2, 0.1)
+# muMaker(5058, 5086, omega_data, data_clean, 2, 0.1)
+# muMaker(5100, 5096, omega_data, data_clean, 2, 0.1)
 
-# rhoSquaredMaker Function [CURRENTLY RETURNING NEGATIVE RESULTS]
+# rhoSquaredMaker Function [Doesn't work independnetly anymore because little_omega only created in finalS]
 # (5059,5091) and (5058,5086) are comparisons that have not been made in the sample data
-rhoSquaredMaker(5059, 5091, omega_data, data_clean, 2, 0.01)
-rhoSquaredMaker(5058, 5086, omega_data, data_clean, 2, 0.01)
+# rhoSquaredMaker(5059, 5091, omega_data, data_clean, 2, 0.01)
+# rhoSquaredMaker(5058, 5086, omega_data, data_clean, 2, 0.01)
 
-# bigEGStar Function [CURRENTLY DOESNT WORK BECAUSE OF rhoSquaredMaker]
-bigEGStar(5059, 5091, omega_data, data_clean, 2, 0.01)
+# bigEGStar Function [Doesn't work independnetly anymore because little_omega only created in finalS]
+# bigEGStar(5059, 5091, omega_data, data_clean, 2, 0.01)
 
-# lowercaseH Function
-lowercaseH(0.1) 
-a<-(muMaker(5059, 5091, omega_data, data_clean, 2, 0.1))/sqrt(1+rhoSquaredMaker(5059, 5091, omega_data, data_clean, 2, 0.01))
+# lowercaseH Function [Doesn't work independnetly anymore because little_omega only created in finalS]
+# lowercaseH(0.1) 
+# a<-(muMaker(5059, 5091, omega_data, data_clean, 2, 0.1))/sqrt(1+rhoSquaredMaker(5059, 5091, omega_data, data_clean, 2, 0.01))
 
-# finalS Function [CURRENTLY DOESNT WORK BECAUSE OF rhoSquaredMaker]
+# finalS Function
 finalS(5059, 5091, omega_data, data_clean, 2, 0.01)
 
-# maxInfoComp Function [CURRENTLY DOESNT WORK BECAUSE OF rhoSquaredMaker]
-# [CURRENTLY TAKES ABOUT 1HR ++ TO RUN]
+# maxInfoComp Function 
+# [CURRENTLY TAKES ABOUT 45mins TO RUN]
 a<-maxInfoComp(data_montgomery, 2, 0.01, 10)
 
 
