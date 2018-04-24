@@ -8,6 +8,7 @@
 #' @param cleaned_data The dataset you are given with comparisons, cleaned using cleaner 
 #' @param sigma The hyperprior chosen to identify the latent space
 #' @param tolerance The tolerance to use for Newton Method convergence
+#' @param little_omega The covariance vector for a theoretical new observation on the dataset 
 #'
 #' @return A double
 #' @author Group <\email{group@@wustl.edu}
