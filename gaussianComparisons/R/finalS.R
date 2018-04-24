@@ -15,7 +15,22 @@
 #' @rdname finalS
 #' @export
 finalS<-function(doc1, doc2, omega1, cleaned_data, sigma, tolerance){
-  hPart<-lowercaseH(muMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance)/sqrt(1+rhoSquaredMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance)))
-  ePart<- bigEGStar(doc1, doc2, omega1, cleaned_data, sigma, tolerance)
+  little_omega <- rep(0, nrow(cleaned_data))
+  for (i in 1:nrow(cleaned_data)){
+    if (doc1 == cleaned_data$first[i]){
+      little_omega[i] <- little_omega[i] + sigma^2
+    }
+    if (doc1 == cleaned_data$second[i]){
+      little_omega[i] <- little_omega[i] - sigma^2
+    }
+    if (doc2 == cleaned_data$first[i]){
+      little_omega[i] <- little_omega[i] - sigma^2
+    }
+    if (doc2 == cleaned_data$second[i]){
+      little_omega[i] <- little_omega[i] + sigma^2
+    }
+  }
+  hPart<-lowercaseH(muMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega)/sqrt(1+rhoSquaredMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega)))
+  ePart<- bigEGStar(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega)
   return(hPart-ePart)
 }
