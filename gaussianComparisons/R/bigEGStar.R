@@ -20,6 +20,6 @@ bigEGStar<-function(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_o
   rhoSquared<-rhoSquaredMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega)
   mu<-muMaker(doc1, doc2, omega1, cleaned_data, sigma, tolerance, little_omega)
   outside<-c/sqrt(rhoSquared+(c^2))
-  inside<-exp(-1*mu^2/(2*rhoSquared+(c^2)))
+  inside<-exp(-1*mu^2/(2*(rhoSquared+c^2)))
   return(outside*inside)
 }
