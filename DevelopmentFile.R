@@ -146,8 +146,10 @@ summary_df <- summary_df[order(summary_df$s_values), ]
 View(summary_df)
 
 ## Plot s values versus mu hat
+expEstMu<-lm(summary_df$s_values ~ exp(summary_df$mu_hat))
 plot(summary_df$mu_hat, summary_df$s_values, xlab = "mu hat values", ylab = "s values",
      main = "Information Gain By Expected g Values")
+lines(summary_df$mu_hat,predict(expEstMu),col='red')
 
 ## Plot s values versus rho squared hat
 plot(summary_df$rho_squared, summary_df$s_values, xlab = "rho^2 values", ylab = "s values",
