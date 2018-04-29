@@ -78,7 +78,80 @@ microbenchmark(finalS(5059, 5091, omega_data, data_clean, 2, 0.01), times = 50)
 finalS(5059, 5091, omega_data, data_clean, 2, 0.01)
 
 
+### Create dataframe for final report
 
+# Use docid 5059 to compare all
+docids <- unique(data_montgomery$document_id)
+# Create s values
+finalS_values <- NULL
+for (i in docids){
+  new_Svalue <- finalS(doc1 = 5059, doc2 = i, omega1 = omega_data, cleaned_data = data_clean,
+                       sigma = 2, tolerance = 0.01)
+  finalS_values <- c(finalS_values, new_Svalue)
+}
+
+# Create mu hat values
+mu_values <- NULL
+sigma <- 2
+for (i in docids){
+  little_omega <- rep(0, nrow(data_clean))
+  for (j in 1:nrow(data_clean)){
+    if (5059 == data_clean$first[j]){
+      little_omega[j] <- little_omega[j] + sigma^2
+    }
+    if (5059 == data_clean$second[j]){
+      little_omega[j] <- little_omega[j] - sigma^2
+    }
+    if (i == data_clean$first[j]){
+      little_omega[j] <- little_omega[j] - sigma^2
+    }
+    if (i == data_clean$second[j]){
+      little_omega[j] <- little_omega[j] + sigma^2
+    }
+  }
+  new_muvalue <- muMaker(doc1 = 5059, doc2 = i, omega1 = omega_data, cleaned_data = data_clean,
+                         sigma = 2, tolerance = 0.01, little_omega = little_omega)
+  mu_values <- c(mu_values, new_muvalue)
+}
+
+# Create rho squared values
+rhoSquared_values <- NULL
+sigma <- 2
+for (i in docids){
+  little_omega <- rep(0, nrow(data_clean))
+  for (j in 1:nrow(data_clean)){
+    if (5059 == data_clean$first[j]){
+      little_omega[j] <- little_omega[j] + sigma^2
+    }
+    if (5059 == data_clean$second[j]){
+      little_omega[j] <- little_omega[j] - sigma^2
+    }
+    if (i == data_clean$first[j]){
+      little_omega[j] <- little_omega[j] - sigma^2
+    }
+    if (i == data_clean$second[j]){
+      little_omega[j] <- little_omega[j] + sigma^2
+    }
+  }
+  new_rhoSquaredValue <- rhoSquaredMaker(doc1 = 5059, doc2 = i, omega1 = omega_data,
+                                         cleaned_data = data_clean, sigma = 2, tolerance = 0.01,
+                                         little_omega = little_omega)
+  rhoSquared_values <- c(rhoSquared_values, new_rhoSquaredValue)
+}
+
+# Create dataframe
+summary_df <- data.frame(rep(5059, 50), docids, finalS_values, mu_values, rhoSquared_values)
+colnames(summary_df) <- c("doc1", "doc2", "s_values", "mu_hat", "rho_squared")
+summary_df <- summary_df[order(summary_df$s_values), ]
+View(summary_df)
+
+## Plot s values versus mu hat
+plot(summary_df$mu_hat, summary_df$s_values, xlab = "mu hat values", ylab = "s values",
+     main = "Information Gain By Expected g Values")
+
+## Plot s values versus rho squared hat
+plot(summary_df$rho_squared, summary_df$s_values, xlab = "rho^2 values", ylab = "s values",
+     main = "Information Gain By Expected Variance Values")
 
 
 
