@@ -23,7 +23,7 @@ For a list of all functions included and used in this pacakage, refer to README.
 
 ## Sample Dataset 
 
-Explain sample dataset 
+The sample dataset is composed of comparisons done on movie reviews. "Comparison" denotes which comparison is being referenced in a given row. "Document" denotes which document is being compared, and "Result" is 1 if the document was more positive than its counterpart. We clean the dataset by placing each compared pair on the same line coding result 1 if the first review was deemed more positive and -1 if the second was deemed more positive.
 
 ```{r}
 
