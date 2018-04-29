@@ -46,23 +46,64 @@ my.g.hat<-newtonMethod(omega_data, data_clean$y, tol=.00000001)
 plot(my.g.hat, data_clean$y)
 head(data_clean)
 
-# muMaker Function [Doesn't work independnetly anymore because little_omega only created in finalS]
+# muMaker Function 
 # (5059,5091) and (5058,5086) are comparisons that have not been made in the sample data
-# muMaker(5059, 5091, omega_data, data_clean, 2, 0.1)
-# muMaker(5058, 5086, omega_data, data_clean, 2, 0.1)
-# muMaker(5100, 5096, omega_data, data_clean, 2, 0.1)
+little_omega <- rep(0, nrow(data_clean))
+for (j in 1:nrow(data_clean)){
+  if (5059 == data_clean$first[j]){
+    little_omega[j] <- little_omega[j] + sigma^2
+  }
+  if (5059 == data_clean$second[j]){
+    little_omega[j] <- little_omega[j] - sigma^2
+  }
+  if (5091 == data_clean$first[j]){
+    little_omega[j] <- little_omega[j] - sigma^2
+  }
+  if (5091 == data_clean$second[j]){
+    little_omega[j] <- little_omega[j] + sigma^2
+  }
+}
+muMaker(5059, 5091, omega_data, data_clean, 2, 0.1, little_omega)
 
-# rhoSquaredMaker Function [Doesn't work independnetly anymore because little_omega only created in finalS]
+# rhoSquaredMaker Function
 # (5059,5091) and (5058,5086) are comparisons that have not been made in the sample data
-# rhoSquaredMaker(5059, 5091, omega_data, data_clean, 2, 0.01)
-# rhoSquaredMaker(5058, 5086, omega_data, data_clean, 2, 0.01)
+little_omega <- rep(0, nrow(data_clean))
+for (j in 1:nrow(data_clean)){
+  if (5059 == data_clean$first[j]){
+    little_omega[j] <- little_omega[j] + sigma^2
+  }
+  if (5059 == data_clean$second[j]){
+    little_omega[j] <- little_omega[j] - sigma^2
+  }
+  if (5086 == data_clean$first[j]){
+    little_omega[j] <- little_omega[j] - sigma^2
+  }
+  if (5086 == data_clean$second[j]){
+    little_omega[j] <- little_omega[j] + sigma^2
+  }
+}
+rhoSquaredMaker(5058, 5086, omega_data, data_clean, 2, 0.01, little_omega)
 
 # bigEGStar Function [Doesn't work independnetly anymore because little_omega only created in finalS]
-# bigEGStar(5059, 5091, omega_data, data_clean, 2, 0.01)
+little_omega <- rep(0, nrow(data_clean))
+for (j in 1:nrow(data_clean)){
+  if (5059 == data_clean$first[j]){
+    little_omega[j] <- little_omega[j] + sigma^2
+  }
+  if (5059 == data_clean$second[j]){
+    little_omega[j] <- little_omega[j] - sigma^2
+  }
+  if (5091 == data_clean$first[j]){
+    little_omega[j] <- little_omega[j] - sigma^2
+  }
+  if (5091 == data_clean$second[j]){
+    little_omega[j] <- little_omega[j] + sigma^2
+  }
+}
+bigEGStar(5059, 5091, omega_data, data_clean, 2, 0.01, little_omega)
 
-# lowercaseH Function [Doesn't work independnetly anymore because little_omega only created in finalS]
-# lowercaseH(0.1) 
-# a<-(muMaker(5059, 5091, omega_data, data_clean, 2, 0.1))/sqrt(1+rhoSquaredMaker(5059, 5091, omega_data, data_clean, 2, 0.01))
+# lowercaseH Function
+lowercaseH(0.1) 
 
 # finalS Function
 finalS(5059, 5091, omega_data, data_clean, 2, 0.01)
