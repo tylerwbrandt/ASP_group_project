@@ -29,7 +29,8 @@ check(current.code)
 
 ## Sample code to test that functions work 
 # cleaner Function
-data_montgomery <- read.csv("gaussianComparisons/Data/exampleHITs.csv")
+data_montgomery <- read.csv("gaussianComparisons/data/exampleHITs.csv")
+data_small <- read.csv("gaussianComparisons/data/exampleHITsSmall.csv")
 data_clean <- cleaner(data_montgomery)
 omega_data <- omega(data_montgomery,2)
 table(unique(omega_data))
@@ -67,8 +68,8 @@ head(data_clean)
 finalS(5059, 5091, omega_data, data_clean, 2, 0.01)
 
 # maxInfoComp Function 
-# [CURRENTLY TAKES ABOUT 45mins TO RUN]
-a<-maxInfoComp(data_montgomery, 2, 0.01, 10)
+# [CURRENTLY TAKES ABOUT 45mins TO RUN on exampleHITs dataset]
+a<-maxInfoComp(data_montgomery, 2, 0.01, 1000)
 
 
 ## Microbenchmarking 
