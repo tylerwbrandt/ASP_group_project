@@ -7,7 +7,7 @@ output: html_document
 
 ## Objetive of Project 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details 
+The data we are working with has to do with user impressions of movie reviews. Users have been shown sets of two comparisons and were asked to pick which one was more positive. If this process is done enough times, you can figure out the order of most positive or negative reviews that you showed the users. The goal of this project is to figure out which two reviews you want to show the next user. By using the [Gaussian Process](http://www.gaussianprocess.org/gpml/chapters/RW.pdf) described by Williams and Rasmussen, we determined the expected information gained by asking the user to choose between two specific reviews. Our maxInfoComp function will make a recommendation for the largest information gain given the data you already have.
 
 ```{r}
 
