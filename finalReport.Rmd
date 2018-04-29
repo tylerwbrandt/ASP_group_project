@@ -18,7 +18,7 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 ## List of all Functions Created 
 
-For a list of all functions included and used in this pacakage, refer to README. 
+For a list of all functions used in this pacakage and the purpose they serve, refer to README. 
 
 
 ## Sample Dataset 
@@ -33,10 +33,111 @@ Explain sample dataset
 
 
 ## Sample Results for Doc ID 5059 
+**Please set your own working directory in line ___.
+**The XQuartz package (install from https://www.xquartz.org) is requried for this part of the markdown to compile. 
 
-```{r}
+We compare docid 5059 to all other documents in our sample dataset. 
 
+```{r, echo=FALSE,message=FALSE}
 
+## Load libraries
+library(devtools)
+library(roxygen2)
+
+## Set Working Directory 
+setwd("~/Documents/GitHub/ASP_group_project") # SET YOUR OWN WORKING DIRECTORY 
+
+## Load in package 
+current.code <- as.package("gaussianComparisons")
+load_all(current.code)
+
+## Comparing docid 5059 to all other documents to determine which comparisons will be most informative
+data_montgomery <- read.csv("gaussianComparisons/data/exampleHITs.csv")
+data_small <- read.csv("gaussianComparisons/data/exampleHITsSmall.csv")
+data_clean <- cleaner(data_montgomery)
+omega_data <- omega(data_montgomery,2)
+docids <- unique(data_montgomery$document_id)
+
+# Create s values
+finalS_values <- NULL
+for (i in docids){
+  new_Svalue <- finalS(doc1 = 5059, doc2 = i, omega1 = omega_data, cleaned_data = data_clean,
+                       sigma = 2, tolerance = 0.01)
+  finalS_values <- c(finalS_values, new_Svalue)
+}
+
+# Create mu hat values
+mu_values <- NULL
+sigma <- 2
+for (i in docids){
+  little_omega <- rep(0, nrow(data_clean))
+  for (j in 1:nrow(data_clean)){
+    if (5059 == data_clean$first[j]){
+      little_omega[j] <- little_omega[j] + sigma^2
+    }
+    if (5059 == data_clean$second[j]){
+      little_omega[j] <- little_omega[j] - sigma^2
+    }
+    if (i == data_clean$first[j]){
+      little_omega[j] <- little_omega[j] - sigma^2
+    }
+    if (i == data_clean$second[j]){
+      little_omega[j] <- little_omega[j] + sigma^2
+    }
+  }
+  new_muvalue <- muMaker(doc1 = 5059, doc2 = i, omega1 = omega_data, cleaned_data = data_clean,
+                         sigma = 2, tolerance = 0.01, little_omega = little_omega)
+  mu_values <- c(mu_values, new_muvalue)
+}
+
+# Create rho squared values
+rhoSquared_values <- NULL
+sigma <- 2
+for (i in docids){
+  little_omega <- rep(0, nrow(data_clean))
+  for (j in 1:nrow(data_clean)){
+    if (5059 == data_clean$first[j]){
+      little_omega[j] <- little_omega[j] + sigma^2
+    }
+    if (5059 == data_clean$second[j]){
+      little_omega[j] <- little_omega[j] - sigma^2
+    }
+    if (i == data_clean$first[j]){
+      little_omega[j] <- little_omega[j] - sigma^2
+    }
+    if (i == data_clean$second[j]){
+      little_omega[j] <- little_omega[j] + sigma^2
+    }
+  }
+  new_rhoSquaredValue <- rhoSquaredMaker(doc1 = 5059, doc2 = i, omega1 = omega_data,
+                                         cleaned_data = data_clean, sigma = 2, tolerance = 0.01,
+                                         little_omega = little_omega)
+  rhoSquared_values <- c(rhoSquared_values, new_rhoSquaredValue)
+}
 
 ```
+
+The s, mu_hat and rho_squared values are reported, in descending values of s.
+We can see that there there is a strong correlation (R-squared = 0.9796) between s_values and exp(mu_hat).
+```{r, echo=FALSE}
+# Create dataframe
+summary_df <- data.frame(rep(5059, 50), docids, finalS_values, mu_values, rhoSquared_values)
+colnames(summary_df) <- c("doc1", "doc2", "s_values", "mu_hat", "rho_squared")
+summary_df <- summary_df[order(summary_df$s_values), ]
+head(summary_df)
+
+## Plot s values versus mu hat
+expEstMu<-lm(summary_df$s_values ~ exp(summary_df$mu_hat))
+plot(summary_df$mu_hat, summary_df$s_values, xlab = "mu hat values", ylab = "s values",
+     main = "Information Gain By Expected g Values")
+lines(summary_df$mu_hat,predict(expEstMu),col='red')
+
+## Plot s values versus rho squared hat
+plot(summary_df$rho_squared, summary_df$s_values, xlab = "rho^2 values", ylab = "s values",
+     main = "Information Gain By Expected Variance Values")
+
+``` 
+
+
+
 
