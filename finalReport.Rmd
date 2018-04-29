@@ -1,0 +1,42 @@
+---
+title: "gaussianComparisons - Final Report"
+author: "Tyler Brandt, Rohan Gupta, Marcus Hallman, Gangyi Sun"
+date: "29/04/2018"
+output: html_document
+---
+
+## Objetive of Project 
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details 
+
+```{r}
+
+
+
+```
+
+
+## List of all Functions Created 
+
+For a list of all functions included and used in this pacakage, refer to README. 
+
+
+## Sample Dataset 
+
+Explain sample dataset 
+
+```{r}
+
+
+
+```
+
+
+## Sample Results for Doc ID 5059 
+
+```{r}
+
+
+
+```
+
