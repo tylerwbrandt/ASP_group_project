@@ -108,13 +108,13 @@ for (i in docids){
 
 ```
 
-The s, mu_hat and rho_squared values are reported, in descending values of s.
+The s, mu_hat and rho_squared values are reported.
 We can see that there there is a strong correlation (R-squared = 0.9796) between s_values and exp(mu_hat).
 ```{r, echo=FALSE}
 # Create dataframe
 summary_df <- data.frame(rep(5059, 50), docids, finalS_values, mu_values, rhoSquared_values)
 colnames(summary_df) <- c("doc1", "doc2", "s_values", "mu_hat", "rho_squared")
-summary_df <- summary_df[order(summary_df$s_values), ]
+summary_df <- summary_df[order(summary_df$s_values,decreasing=TRUE), ]
 head(summary_df)
 
 ## Plot s values versus mu hat

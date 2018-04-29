@@ -183,7 +183,7 @@ for (i in docids){
 # Create dataframe
 summary_df <- data.frame(rep(5059, 50), docids, finalS_values, mu_values, rhoSquared_values)
 colnames(summary_df) <- c("doc1", "doc2", "s_values", "mu_hat", "rho_squared")
-summary_df <- summary_df[order(summary_df$s_values), ]
+summary_df <- summary_df[order(summary_df$s_values, decreasing=TRUE), ]
 View(summary_df)
 
 ## Plot s values versus mu hat
