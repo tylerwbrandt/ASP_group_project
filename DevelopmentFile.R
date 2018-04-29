@@ -18,13 +18,13 @@ getwd()
 # Only run this the first time to create the skeleton 
 # Testdevtools::create("gaussianComparisons")
 
-
 ## Updates the package based on R scripts written, man and NAMESPACE automatically updates. 
 # Manually update DESCRIPTION if need be.
 current.code <- as.package("gaussianComparisons")
 load_all(current.code)
 document(current.code)
 check(current.code)
+
 
 
 ## Sample code to test that functions work 
@@ -40,7 +40,6 @@ draw[data_clean$first==5053]
 draw[data_clean$second==5053]
 draw[data_clean$second==5069]
 draw[data_clean$first==5069]
-
 
 my.g.hat<-newtonMethod(omega_data, data_clean$y, tol=.00000001)
 plot(my.g.hat, data_clean$y)
@@ -84,7 +83,7 @@ for (j in 1:nrow(data_clean)){
 }
 rhoSquaredMaker(5058, 5086, omega_data, data_clean, 2, 0.01, little_omega)
 
-# bigEGStar Function [Doesn't work independnetly anymore because little_omega only created in finalS]
+# bigEGStar Function 
 little_omega <- rep(0, nrow(data_clean))
 for (j in 1:nrow(data_clean)){
   if (5059 == data_clean$first[j]){
@@ -113,10 +112,12 @@ finalS(5059, 5091, omega_data, data_clean, 2, 0.01)
 a<-maxInfoComp(data_montgomery, 2, 0.01, 1000)
 
 
+
 ## Microbenchmarking 
 library(microbenchmark)
 microbenchmark(finalS(5059, 5091, omega_data, data_clean, 2, 0.01), times = 50)
 finalS(5059, 5091, omega_data, data_clean, 2, 0.01)
+
 
 
 ### Create dataframe for final report
@@ -195,7 +196,6 @@ lines(summary_df$mu_hat,predict(expEstMu),col='red')
 ## Plot s values versus rho squared hat
 plot(summary_df$rho_squared, summary_df$s_values, xlab = "rho^2 values", ylab = "s values",
      main = "Information Gain By Expected Variance Values")
-
 
 
 
